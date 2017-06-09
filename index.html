@@ -34,7 +34,8 @@
 			<input type="email"
 			       class="form-control"
 						 ng-model="formModel.email"
-			       id="email" >
+			       id="email"
+						 required="required">
 		</div >
 
 		<div class="form-group" >
@@ -42,7 +43,8 @@
 			<input type="text"
 			       class="form-control"
 						 ng-model="formModel.username"
-			       id="username" >
+			       id="username"
+						 required="required">
 		</div >
 
 		<div class="form-group" >
@@ -71,11 +73,12 @@
 			<input type="password"
 			       class="form-control"
 						 ng-model="formModel.password"
-			       id="password" >
+			       id="password"
+						 required="required">
 		</div >
 
 		<div class="form-group">
-			<button class="btn btn-primary">Register
+			<button class="btn btn-primary" ng-click="onSubmit()">Register
 			</button>
 		</div>
 
@@ -94,7 +97,7 @@
 		$scope.formModel = {};
 
 		$scope.onSubmit = function () {
-			console.log("Hey i'm submitted!");
+			console.log("Submited!");
 			console.log($scope.formModel);
 
 			$http.post('https://url.where.you.want.the.info.to.get.sent/', $scope.formModel).
